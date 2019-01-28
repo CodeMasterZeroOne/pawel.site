@@ -13,6 +13,8 @@ CACHE:
 /main.css
 /main.js
 /svgc.html
+/images/offline.jpg
+/offline.html
 
 FALLBACK:
 /offline.html
