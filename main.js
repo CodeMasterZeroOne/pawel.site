@@ -13,7 +13,7 @@ function onLoad() {
   if (filename === 'index.html') {
     //getLocation();
   }
-  else if (filename === 'svgcanvas.html') {
+  else if (filename === 'svgc.html') {
     console.log("runing in svg canvas");
     drawRectangle();
   }
