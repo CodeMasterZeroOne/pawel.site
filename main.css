@@ -234,7 +234,7 @@ footer {
 #gangham {
   width: 225px;
   height: 400px;
-  background-image: url(Images/sprite.png);
+  background-image: url(images/sprite.png);
   animation: gangham 4s steps(23, start) infinite, movearound 12s steps(69, end) infinite alternate 44ms;
   animation-direction: normal, alternate;
 }
