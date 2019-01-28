@@ -1,0 +1,397 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  color: white;
+}
+
+nav {
+  height: 1.5em;
+  background-color: aquamarine;
+}
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*width: 200px;*/
+  background-color: #f1f1f1;
+}
+
+li a {
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+nav li {
+  display: inline;
+}
+
+/* Change the link color on hover */
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+img {
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Canvas and SVG setup */
+
+#newCanvas {
+  border: 1px solid white;
+  width: 400px;
+  height: 150px;
+}
+
+#newSVG {
+  border: 1px solid white;
+  width: 400px;
+  height: 150px;
+}
+
+/* CSS transitions,  10. Use CSS transitions for elements on an HTML5 page to animate a User Interface */
+
+.container {
+  font-family: "Open Sans", Helvetica;
+  margin-top: 180px;
+  text-align: center;
+}
+
+.square {
+  display: inline-block;
+  border-radius: 5px;
+  height: 100px;
+  width: 100px;
+  margin: 0 60px;
+  transition: transform 1s ease-out;
+}
+
+.square:nth-of-type(1) {
+  background-color: #4ECDC4;
+}
+
+.square:nth-of-type(2) {
+  background-color: #FF6B6B;
+}
+
+.square:nth-of-type(3) {
+  background-color: #FFE66D;
+}
+
+.square1:hover {
+  transform: scale(0.5);
+}
+
+.square2:hover {
+  transform: scale(2);
+}
+
+.square3:hover {
+  transform: scale(0.5, 2.5);
+}
+
+/* start form*/
+
+form {
+  margin: 10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  letter-spacing: 4px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+label .label-text {
+  color: rgb(214, 208, 208);
+  cursor: text;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  -moz-transform: translateY(-34px);
+  -ms-transform: translateY(-34px);
+  -webkit-transform: translateY(-34px);
+  transform: translateY(-34px);
+  transition: all 0.3s;
+}
+
+label input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #4A4A4A;
+  color: white;
+  font-size: 36px;
+  letter-spacing: -1px;
+  outline: 0;
+  padding: 5px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  width: 200px;
+}
+
+label input:focus {
+  max-width: 100%;
+  width: 400px;
+}
+
+label input:focus+.label-text {
+  color: #F0F0F0;
+  font-size: 13px;
+  -moz-transform: translateY(-74px);
+  -ms-transform: translateY(-74px);
+  -webkit-transform: translateY(-74px);
+  transform: translateY(-74px);
+}
+
+label input:valid+.label-text {
+  font-size: 13px;
+  -moz-transform: translateY(-74px);
+  -ms-transform: translateY(-74px);
+  -webkit-transform: translateY(-74px);
+  transform: translateY(-74px);
+}
+
+button {
+  background-color: #333333;
+  border: 2px solid white;
+  border-radius: 27px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+
+button:hover, button:focus {
+  background-color: white;
+  color: #333333;
+  outline: 0;
+}
+.radioButtons{
+  width: 50px;
+}
+.radioButtons:focus{
+  width: 100px;
+}
+
+
+
+section {
+  background-color: transparent;
+}
+
+#httpRequest {
+  column-count: 4;
+}
+
+article {
+  min-height: 80vh;
+  /* this makes sure that the article  section is at 80% of web page */
+  padding: 10px;
+  margin: 10px;
+  background-color: transparent;
+}
+
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+aside {
+  padding: 10px;
+  margin: 10px;
+  background-color: transparent;
+}
+
+footer {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  margin: 10px;
+  text-align: center;
+}
+
+#video {
+  position: fixed;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Animation with css*/
+
+#gangham {
+  width: 225px;
+  height: 400px;
+  background-image: url(Images/sprite.png);
+  animation: gangham 4s steps(23, start) infinite, movearound 12s steps(69, end) infinite alternate 44ms;
+  animation-direction: normal, alternate;
+}
+
+@keyframes gangham {
+  0% {
+    background-position: 0 0
+  }
+  100% {
+    background-position: -5175px 0
+  }
+}
+
+@keyframes movearound {
+  0% {
+    transform: translatex(0)
+  }
+  100% {
+    transform: translatex(600px);
+  }
+}
+
+/*hideContent*/
+.namePrint {
+  width: 100%;
+  height: 100%;
+  background-color: #34495e;
+}
+
+.content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 160px;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  color: #ecf0f1;
+}
+.content__container {
+  font-weight: 600;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 40px;
+}
+.content__container:before {
+  content: '[';
+  left: 0;
+}
+.content__container:after {
+  content: ']';
+  position: absolute;
+  right: 0;
+}
+.content__container:after, .content__container:before {
+  position: absolute;
+  top: 0;
+  color: #16a085;
+  font-size: 42px;
+  line-height: 40px;
+  -webkit-animation-name: opacity;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: opacity;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.content__container__text {
+  display: inline;
+  float: left;
+  margin: 0;
+}
+.content__container__list {
+  margin-top: 0;
+  padding-left: 110px;
+  text-align: left;
+  list-style: none;
+  -webkit-animation-name: change;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: change;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.content__container__list__item {
+  line-height: 40px;
+  margin: 0;
+}
+
+@-webkit-keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes change {
+  0%, 12.66%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  16.66%, 29.32% {
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+  33.32%,45.98% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  49.98%,62.64% {
+    -webkit-transform: translate3d(0, -75%, 0);
+            transform: translate3d(0, -75%, 0);
+  }
+  66.64%,79.3% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  83.3%,95.96% {
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+}
+@keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes change {
+  0%, 12.66%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  16.66%, 29.32% {
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+  33.32%,45.98% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  49.98%,62.64% {
+    -webkit-transform: translate3d(0, -75%, 0);
+            transform: translate3d(0, -75%, 0);
+  }
+  66.64%,79.3% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  83.3%,95.96% {
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+}

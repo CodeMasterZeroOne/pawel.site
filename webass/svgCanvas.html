@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" manifest="/cache.manifest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG &amp; Canvas</title>
+    <!-- tell HTML where to find default.css -->
+    <link href="main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <!--/.Navbar-->
+        <nav>
+            <ol class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <!-- goes to page where the form is-->
+                <li><a href="form.html">Web Form</a></li>
+                <!-- goest to page where xml request is-->
+                <li><a href="xmlRequest.html">XML Http Request</a></li>
+                <!-- goest to page where SVG and Canvas is-->
+                <li class="active"><a href="#">SVG &amp; Canvas</a></li>
+            </ol>
+        </nav>
+
+    </header>
+    <video id="video" autoplay loop muted>
+        <source src="Video/Spedometer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h2>To see CSS transition in action, please hover over those colorfull squares.</h2>
+        <div class="square square1"></div>
+        <div class="square square2"></div>
+        <div class="square square3"></div>
+    </div> <br /><br />
+    <div style="text-align: center">
+        <h2>SVG Circle</h2>
+        <p>SVG has better scalability. So it can be printed with high quality at any resolution</p>
+        <p>SVG gives better performance with smaller number of objects or larger surface.</p>
+        <p>SVG can be modified through script and CSS</p>
+        <p>SVG is vector based and composed of shapes.</p>
+        <svg id="newSVG">
+                <g id="Button"
+                transform="translate(100,100)">
+               <ellipse stroke-width="2" stroke="none" fill="green" ry="1cm" rx="2cm" >
+                 <animate fill="freeze" dur="1s" begin="Button.click" from="1cm" to="5cm" attributeName="ry"/>
+                 <animate fill="freeze" dur="1s" begin="Button.click" from="2cm" to="10cm" attributeName="rx"/>
+               </ellipse>
+               <text style="font-family:Arial;font-size:18;" alignment-baseline="middle" x="-1cm">Click me !</text>
+                 </g>
+        </svg>
+        <br />
+        <h2>Canvas Rectangle</h2>
+        <p>Canvas has poor scalability. Hence it is not suitable for printing on higher resolution</p>
+        <p>Canvas gives better performance with smaller surface or larger number of objects.</p>
+        <p>Canvas can be modified through script only</p>
+        <p>Canvas is raster based and composed of pixel.</p>
+        <canvas id="newCanvas"></canvas><br>
+
+    </div>
+    <!-- drawing on canvas with css-->
+    <h2 style="text-align: center">You can draw on canvas using css</h2>
+    <div style="text-align: center">
+        <canvas id="gangham"></canvas>
+    </div>
+
+
+    <footer>
+        <p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
+        <!--use ascii copyright symbol to properly render-->
+        &copy; Pawel Gajewski 2019</p>
+    </footer>
+    <!-- tell HTML where to find main.js -->
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
