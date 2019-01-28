@@ -2,7 +2,7 @@ CACHE MANIFEST
 NETWORK:
 /images/sprite.png
 /form.html
-xmlrequest.html
+/xmlrequest.html
 
 CACHE:
 /video/fire.mp4
@@ -17,4 +17,5 @@ CACHE:
 /offline.html
 
 FALLBACK:
-/offline.html
+/form.html /offline.html
+/xmlrequest.html /offline.html
