@@ -1,0 +1,18 @@
+CACHE MANIFEST
+NETWORK:
+/Images/sprite.png
+/form.html
+xmlRequest.html
+
+CACHE:
+/Video/fire.mp4
+/Video/Spedometer.mp4
+/index.html
+
+/info.txt
+/main.css
+/main.js
+/svgCanvas.html
+
+FALLBACK:
+/offline.html
