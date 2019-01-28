@@ -19,7 +19,7 @@
                 <!-- goes to page where the form is-->
                 <li><a href="form.html">Web Form</a></li>
                 <!-- goest to page where xml request is-->
-                <li class="active"><a href="#">XML Http Request</a></li>
+                <li class="active"><a href="">XML Http Request</a></li>
                 <!-- goest to page where SVG and Canvas is-->
                 <li><a href="svgc.html">SVG &amp; Canvas</a></li>
             </ol>
@@ -47,9 +47,16 @@
 
 	<h4 id="fileText">Let AJAX change this text when clicking the button.</h4>
 
-	<button type="button" onclick="loadDoc()">Change Content</button>
+	<button type="button" onclick="loadDoc()">Change Content</button><br />
+
+	<!-- 12. Create, run and monitor a Web Worker process -->
+	<h1>Web Worker... working hard!</h1>
 
 	<script>
+		/* 12. Create, run and monitor a Web Worker process */
+		var worker = new Worker('task.js');
+		worker.postMessage(); // Start the worker.
+
 	    // test this feature using Firefox (preferred option)
 		// it may also be tested using Microsoft Edge
 	    function loadDoc() {
