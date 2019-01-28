@@ -1,7 +1,6 @@
 CACHE MANIFEST
 NETWORK:
 ./images/sprite.png
-./form.html
 ./xmlrequest.html
 
 CACHE:
