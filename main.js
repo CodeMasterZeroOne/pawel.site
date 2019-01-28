@@ -3,9 +3,10 @@ var x = document.getElementById("geolocationDemo");
 var map, infoWindow;
 var globalUser;
 var usersBrowser;
-window.onload = onLoad(); 
+window.onload = onLoad();
 
 function onLoad() {
+  console.log("runing on load");
   var url = window.location.pathname;
   var filename = url.substring(url.lastIndexOf('/') + 1);
   browserDetect();
@@ -13,6 +14,7 @@ function onLoad() {
     //getLocation();
   }
   else if (filename === 'svgCanvas.html') {
+    console.log("runing in svg canvas");
     drawRectangle();
   }
   else if (filename === 'form.html') {
@@ -63,34 +65,29 @@ function showPosition(position) {
   document.getElementById("map").src = mapsrc;
 }
 /* Detect which browser */
-function browserDetect() { 
-  if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
- {
-     //alert('Opera');
-     usersBrowser = 'Opera';
- }
- else if(navigator.userAgent.indexOf("Chrome") != -1 )
- {
-     //alert('Chrome');
-     usersBrowser = 'Chrome';
- }
- else if(navigator.userAgent.indexOf("Safari") != -1)
- {
-     //alert('Safari');
-     usersBrowser = 'Safari';
- }
- else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
- {
-      //alert('Firefox');
-      usersBrowser = 'Firefox';
- }
- else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
- {
-   //alert('IE'); 
-   usersBrowser = 'IE';
- }  
- else 
- {
+function browserDetect() {
+  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+    //alert('Opera');
+    usersBrowser = 'Opera';
+  }
+  else if (navigator.userAgent.indexOf("Chrome") != -1) {
+    //alert('Chrome');
+    usersBrowser = 'Chrome';
+  }
+  else if (navigator.userAgent.indexOf("Safari") != -1) {
+    //alert('Safari');
+    usersBrowser = 'Safari';
+  }
+  else if (navigator.userAgent.indexOf("Firefox") != -1) {
+    //alert('Firefox');
+    usersBrowser = 'Firefox';
+  }
+  else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+  {
+    //alert('IE'); 
+    usersBrowser = 'IE';
+  }
+  else {
     alert('unknown');
- }
- }
+  }
+}
