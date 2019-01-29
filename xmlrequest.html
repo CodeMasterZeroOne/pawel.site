@@ -2,96 +2,129 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>XML Request</title>
-    <!-- tell HTML where to find default.css -->
-    <link href="main.css" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>XML Request</title>
+	<!-- tell HTML where to find default.css -->
+	<link href="main.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-    <header>
-        <!--/.Navbar-->
-        <nav>
-            <ol class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <!-- goes to page where the form is-->
-                <li><a href="form.html">Web Form</a></li>
-                <!-- goest to page where xml request is-->
-                <li class="active"><a href="">XML Http Request</a></li>
-                <!-- goest to page where SVG and Canvas is-->
-                <li><a href="svgc.html">SVG &amp; Canvas</a></li>
-            </ol>
-        </nav>
-    </header>
-    <video id="video" autoplay loop muted>
-        <source src="video/spedometer.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <article>
+	<header>
+		<!--/.Navbar-->
+		<nav>
+			<ol class="nav navbar-nav">
+				<li><a href="index.html">Home</a></li>
+				<!-- goes to page where the form is-->
+				<li><a href="form.html">Web Form</a></li>
+				<!-- goest to page where xml request is-->
+				<li class="active"><a href="">XML Http Request</a></li>
+				<!-- goest to page where SVG and Canvas is-->
+				<li><a href="svgc.html">SVG &amp; Canvas</a></li>
+			</ol>
+		</nav>
+	</header>
+	<video id="video" autoplay loop muted>
+		<source src="video/spedometer.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<article>
 		<!-- 4. Use XMLHttpRequest objects to communicate data -->
-        <h1>The XMLHttpRequest Object</h1>
-	<p>
-		XMLHttpRequest (XHR) is a JavaScript API to create AJAX requests.<br />
-		Its methods provide the ability to send network requests between<br />
-		the browser and a server.<br />
-		<a href="https://developer.mozilla.org/en-US/docs/Glossary/XHR_(XMLHttpRequest)" target="_blank">Learn more.</a><br />
-	</p>
+		<h1>The XMLHttpRequest Object</h1>
+		<p>
+			XMLHttpRequest (XHR) is a JavaScript API to create AJAX requests.<br />
+			Its methods provide the ability to send network requests between<br />
+			the browser and a server.<br />
+			<a href="https://developer.mozilla.org/en-US/docs/Glossary/XHR_(XMLHttpRequest)" target="_blank">Learn more.</a><br />
+		</p>
 
-	<p>
-		NOTE: Microsoft IE and Chrome do not support running <br/>
-		XMLHttpRequest locally (i.e. not using a server),<br />
-		therefore use Firefox or Microsoft Edge.<br />		
-	</p>
+		<p>
+			NOTE: Microsoft IE and Chrome do not support running <br />
+			XMLHttpRequest locally (i.e. not using a server),<br />
+			therefore use Firefox or Microsoft Edge.<br />
+		</p>
 
-	<h4 id="fileText">Let AJAX change this text when clicking the button.</h4>
+		<h4 id="fileText">Let AJAX change this text when clicking the button.</h4>
 
-	<button type="button" onclick="loadDoc()">Change Content</button><br />
+		<button type="button" onclick="loadDoc()">Change Content</button><br />
 
-	<!-- 12. Create, run and monitor a Web Worker process -->
-	<h1>Web Worker... working hard!</h1>
+		<!-- 12. Create, run and monitor a Web Worker process -->
+		<h1>Web Worker ...working hard!</h1>
 
-	<script>
-		/* 12. Create, run and monitor a Web Worker process */
-		var worker = new Worker('task.js');
-		worker.postMessage(); // Start the worker.
+		<output id="webWorkerResult"></output><br/>
+		<button onclick="sayHI()">Say HI</button>
+		<button onclick="unknownCmd()">Send unknown command</button>
+		<button onclick="stop()">Stop worker</button>
 
-	    // test this feature using Firefox (preferred option)
-		// it may also be tested using Microsoft Edge
-	    function loadDoc() {
-		    // create a new XMLHttpRequest object
-		    var xhttp = new XMLHttpRequest();
-            // define the function to be called when the readyState property changes
-			xhttp.onreadystatechange = function() {
-				// readyState 4 => request finished and response is ready
-				if (xhttp.readyState == 4) {
-				    // status 200 => successful HTTP requests
-				    if (xhttp.status == 200) {
-					    // responseText => returns the response data as a string
-						document.getElementById("fileText").innerHTML = xhttp.responseText;
+		<!-- 11. Use the Web Sockets Application Programming Interface with JavaScript to send and receive real time communications data -->
+		<h1>Web Sockets ...in action!</h1>
+		<div id = "sse">
+			<p id="socketOutput"></p>
+				<button onclick="webSocket()">Web Socket</button>
+			 </div>
+
+		<!-- 12. Create, run and monitor a Web Worker process -->
+		<script>
+			function sayHI() {
+				worker.postMessage({ 'cmd': 'start', 'msg': 'Hi i am web worker :)' });
+			}
+
+			function stop() {
+				// worker.terminate() from this script would also stop the worker.
+				worker.postMessage({ 'cmd': 'stop', 'msg': 'Bye' });
+			}
+
+			function unknownCmd() {
+				worker.postMessage({ 'cmd': 'foobard', 'msg': 'Say What???' });
+			}
+
+			var worker = new Worker('worker.js');
+
+			worker.addEventListener('message', function (e) {
+				document.getElementById('webWorkerResult').textContent = e.data;
+			}, false);
+		</script>
+
+		<script>
+
+			// test this feature using Firefox (preferred option)
+			// it may also be tested using Microsoft Edge
+			function loadDoc() {
+				// create a new XMLHttpRequest object
+				var xhttp = new XMLHttpRequest();
+				// define the function to be called when the readyState property changes
+				xhttp.onreadystatechange = function () {
+					// readyState 4 => request finished and response is ready
+					if (xhttp.readyState == 4) {
+						// status 200 => successful HTTP requests
+						if (xhttp.status == 200) {
+							// responseText => returns the response data as a string
+							document.getElementById("fileText").innerHTML = xhttp.responseText;
+						}
 					}
+				};
+				if (usersBrowser === 'Firefox') {
+					var fileName = 'info.txt'; // using local file to read the text from it
 				}
-			};
-			if (usersBrowser === 'Firefox') {
-				var fileName = 'info.txt'; // using local file to read the text from it(Note: works in firefox)
+				else {
+					// using earthquake api to get data from about earthquakes in 2019
+					var fileName = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=xml&starttime=2019-01-01&endtime=2019-01-02&minmagnitude=5';
+				}
+				xhttp.open('GET', fileName, true);
+				xhttp.send(null);
 			}
-			else{
-				var fileName = 'https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=7602&format=xml';
-				//var fileName = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR';
-			}
-			xhttp.open('GET', fileName, true);
-			xhttp.send(null);
-		}
-	</script>
-    </article>
-    <footer>
-        <p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
-        <!--use ascii copyright symbol to properly render-->
-        &copy; Pawel Gajewski 2019</p>
-    </footer>
-    <!-- tell HTML where to find main.js -->
-    <script src="main.js" type="text/javascript"></script>
+		</script>
+	</article>
+	<footer>
+		<p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
+		<!--use ascii copyright symbol to properly render-->
+		&copy; Pawel Gajewski 2019</p>
+	</footer>
+	<!-- tell HTML where to find main.js -->
+	<script src="main.js" type="text/javascript"></script>
+	<script src="socket.js" type="text/javascript"></script>
 </body>
 
 </html>

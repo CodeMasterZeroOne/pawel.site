@@ -1,6 +1,5 @@
 
 var x = document.getElementById("geolocationDemo");
-var map, infoWindow;
 var globalUser;
 var usersBrowser;
 window.onload = onLoad();
@@ -35,8 +34,8 @@ function doCoolStuff() {
   var userName = document.getElementById("inputName").value;
   var userSurname = document.getElementById("inputSurname").value;
   var helloContent = document.getElementById("hideContent");
-  document.getElementById("userName").innerHTML = "  " + userName + " !";
-  document.getElementById("userSurname").innerHTML = "  " + userSurname + " !";
+  document.getElementById("userName").innerHTML = "  Hello: " + userName + " !";
+  document.getElementById("userSurname").innerHTML = "  Hello: " + userSurname + " !";
   helloContent.style.visibility = "visible";
 }
 
