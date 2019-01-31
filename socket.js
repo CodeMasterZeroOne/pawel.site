@@ -4,7 +4,7 @@ function webSocket() {
        alert("WebSocket is supported by your Browser!");
        
        // Let us open a web socket
-       var ws = new WebSocket("ws://html5rocks.websocket.org/echo");
+       var ws = new WebSocket("ws://echo.websocket.org/");
         
        ws.onopen = function() {
           
