@@ -188,12 +188,12 @@ section {
   background-color: transparent;
 }
 
-#httpRequest {
+#columnCountFour {
   column-count: 4;
 }
 
 article {
-  min-height: 40vh;
+  min-height: 30vh;
   /* this makes sure that the article  section is at 80% of web page */
   padding: 10px;
   margin: 10px;
@@ -279,7 +279,6 @@ footer {
   overflow: hidden;
   height: 40px;
   padding: 0 40px;
-  /* text-align-last: center; */
 }
 
 .content__container__text {
