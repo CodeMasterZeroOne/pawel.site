@@ -193,7 +193,7 @@ section {
 }
 
 article {
-  min-height: 30vh;
+  /* min-height: 30vh; */
   /* this makes sure that the article  section is at 80% of web page */
   padding: 10px;
   margin: 10px;
