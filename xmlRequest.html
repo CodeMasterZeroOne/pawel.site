@@ -52,8 +52,8 @@
 
 		<!-- 12. Create, run and monitor a Web Worker process -->
 		<h1>Web Worker ...working hard!</h1>
-
-		<output id="webWorkerResult"></output><br />
+		
+		<output id="result"></output><br/>
 		<button onclick="sayHI()">Say HI</button>
 		<button onclick="unknownCmd()">Send unknown command</button>
 		<button onclick="stop()">Stop worker</button>
@@ -104,10 +104,10 @@
 			</p>
 		</section>
 
-		<!-- 12. Create, run and monitor a Web Worker process -->
+		<!-- 12. Create, run and monitor a Web Worker process NOTE: workert only works in FireFox-->
 		<script>
 			function sayHI() {
-				worker.postMessage({ 'cmd': 'start', 'msg': 'Hi i am web worker :)' });
+				worker.postMessage({ 'cmd': 'start', 'msg': 'Hi' });
 			}
 
 			function stop() {
@@ -116,13 +116,13 @@
 			}
 
 			function unknownCmd() {
-				worker.postMessage({ 'cmd': 'foobard', 'msg': 'Say What???' });
+				worker.postMessage({ 'cmd': 'foobard', 'msg': '???' });
 			}
 
 			var worker = new Worker('worker.js');
 
 			worker.addEventListener('message', function (e) {
-				document.getElementById('webWorkerResult').textContent = e.data;
+				document.getElementById('result').textContent = e.data;
 			}, false);
 		</script>
 
