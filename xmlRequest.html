@@ -30,14 +30,14 @@
 		<source src="video/spedometer.mp4" type="video/mp4">
 		Your browser does not support the video tag.
 	</video>
-	<article>
+	<article style="text-align:center">
 		<!-- 4. Use XMLHttpRequest objects to communicate data -->
 		<h1>The XMLHttpRequest Object</h1>
 		<p>
 			XMLHttpRequest (XHR) is a JavaScript API to create AJAX requests.<br />
 			Its methods provide the ability to send network requests between<br />
 			the browser and a server.<br />
-			<a href="https://developer.mozilla.org/en-US/docs/Glossary/XHR_(XMLHttpRequest)" target="_blank">Learn more.</a><br />
+			<a href="https://developer.mozilla.org/en-US/docs/Glossary/XHR_(XMLHttpRequest)" target="_blank" style="color:aqua">Learn more.</a><br />
 		</p>
 
 		<p>
@@ -52,8 +52,9 @@
 
 		<!-- 12. Create, run and monitor a Web Worker process NOTE:web worker only works online not on-->
 		<h1>Web Worker ...working hard!</h1>
-		
-		<output id="result"></output><br/>
+		<h5>Note: when offline it works in FireFox</h5><br>
+
+		<output id="result"></output><br />
 		<button onclick="sayHI()">Say HI</button>
 		<button onclick="unknownCmd()">Send unknown command</button>
 		<button onclick="stop()">Stop worker</button>
@@ -64,7 +65,7 @@
 			<p id="socketOutput"></p>
 			<button onclick="webSocket()">Web Socket</button>
 		</div>
-		<br />
+		<br><br><br>
 		<section id="columnCountFour">
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis nisi maxime aut eveniet aliquid quibusdam
@@ -157,7 +158,7 @@
 		</script>
 	</article>
 	<footer>
-		<p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
+		<p id="copyright"></p>FOOTER - This is where you can put copy rights, company name and year.<br />
 		<!--use ascii copyright symbol to properly render-->
 		&copy; Pawel Gajewski 2019</p>
 	</footer>
