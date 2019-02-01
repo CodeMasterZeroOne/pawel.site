@@ -16,5 +16,7 @@ CACHE:
 
 FALLBACK:
 ./form.html ./offline.html
+./index.html ./offline.html
+./svgc.html ./offline.html
 ./xmlrequest.html ./offline.html
 ./images/lorem.jpg ./images/offline.jpg
