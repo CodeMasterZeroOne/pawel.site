@@ -33,9 +33,22 @@ function drawRectangle() {
 function doCoolStuff() {
   var userName = document.getElementById("inputName").value;
   var userSurname = document.getElementById("inputSurname").value;
+  var userGender = document.querySelector('input[name="gender"]:checked').value;
+
+  // 8. Implement an adaptive User Interface
+  if (userGender === 'male'){
+    document.getElementById("userName").innerHTML = "  Hello: " + userName + ", you are a beast!";
+    document.getElementById("userSurname").innerHTML = "  Hello: " + userSurname + " !";
+  }
+  else if (userGender ==='female'){
+    document.getElementById("userName").innerHTML = "  Hello: " + userName + ", you look beautiful!";
+    document.getElementById("userSurname").innerHTML = "  Hello: " + userSurname + " !";
+  }
+  else{
+    document.getElementById("userName").innerHTML = "  Hello: " + userName + ", what gender again?!?!";
+    document.getElementById("userSurname").innerHTML = "  Hello: " + userSurname + " !";
+  }
   var helloContent = document.getElementById("hideContent");
-  document.getElementById("userName").innerHTML = "  Hello: " + userName + " !";
-  document.getElementById("userSurname").innerHTML = "  Hello: " + userSurname + " !";
   helloContent.style.visibility = "visible";
 }
 
@@ -63,6 +76,7 @@ function showPosition(position) {
 
   document.getElementById("map").src = mapsrc;
 }
+
 /* Detect which browser */
 function browserDetect() {
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
